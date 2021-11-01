@@ -3,7 +3,9 @@ class PicturesController < ApplicationController
     before_action :set_picture, only: [:show, :edit, :update, :destroy]
 
     def confirm
-        @picture = Picture.new(picture_params)
+        # @picture = Picture.new(picture_params)
+        # @picture.user_id = current_user.id
+        @picture = current_user.pictures.build(picture_params)
         render :new if @picture.invalid?
     end
 
@@ -16,8 +18,9 @@ class PicturesController < ApplicationController
     end
 
     def create
-        @picture = Picture.new(picture_params)
-        @picture.user_id = current_user.id
+        # @picture = Picture.new(picture_params)
+        # @picture.user_id = current_user.id
+        @picture = current_user.pictures.build(picture_params)
         if params[:back]
             render :new
         else
