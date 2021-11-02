@@ -11,6 +11,11 @@
   </head>
 
   <body>
+  <header>
+      <ul>
+        <li><a href="#">FFKK</a></li>
+      </ul>
+      </header>
   <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "#{key}") %>
   <% end %>
@@ -22,5 +27,8 @@
       <%= link_to "Login", new_session_path %>
     <% end %>
     <%= yield %>
+    <footer>
+      <p>FFKK</p>
+    </footer>
   </body>
 </html>
