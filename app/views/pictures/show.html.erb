@@ -1,4 +1,4 @@
 <h1>詳細画面</h1>
 <p><strong>Image:</strong>
-<%= image_tag @picture.image.url %></p>
+<%= image_tag @picture.image.url if @picture.image.present? %></p>
 <p>内容: <%= @picture.content %></p>
